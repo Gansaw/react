@@ -1,19 +1,19 @@
-// const BoxRows = (probs) => {
+import { useState } from "react";
 const BoxRows = ({ mv }) => {
-    // const mvlist = [...probs.mv];
-    // console.log("BoxRows", mvlist);
-    console.log("BoxRows", mv);
+    const [footTag, setFootTag] = useState(0);
+
+    const showMv = (row) => { console.log(row) };
+
     let trTags = [];
     for (let row of mv) {
-        console.log(row.rank, row.movieNm, row.salesAmt, row.rankInten)
         let icon;
         let inten = parseInt(row.rankInten);
-        if(inten == 0) icon = "⏹";
-        else if(inten > 0) icon = "🔼";
+        if (inten === 0) icon = "⏹";
+        else if (inten > 0) icon = "🔼";
         else icon = "🔽";
 
         trTags.push(
-            <tr className = "mytr" key={row.movieCd}>
+            <tr className="mytr" key={row.movieCd} onClick={() => showMv(row)}>
                 <td>{row.rank}</td>
                 <td>{row.movieNm}</td>
                 <td>{parseInt(row.salesAmt).toLocaleString()}</td>
@@ -25,7 +25,14 @@ const BoxRows = ({ mv }) => {
 
     return (
         <>
-            {trTags}
+            <tbody>
+                {trTags}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colSpan={4}> {footTag}</td>
+                </tr>
+            </tfoot>
         </>
     );
 }
