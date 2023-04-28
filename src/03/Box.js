@@ -1,4 +1,5 @@
-import BoxRows from './BoxRows';
+// import BoxRows from './BoxRows';
+import BoxRows from './BoxRows1';
 import './Box.css'
 const Box = () => {
     let mvlist =
@@ -8,12 +9,13 @@ const Box = () => {
     return (
         <>
             <main className="container">
-                <article>
+                <article data-theme="dark">
                     <header>
                         <h1>일일 박스오피스</h1>
                     </header>
                     <table>
                         <thead>
+                            {/* tr : 행 1 줄, td : 열 1줄 */}
                             <tr>
                                 <th scope="col">순위</th>
                                 <th scope="col">영화명</th>

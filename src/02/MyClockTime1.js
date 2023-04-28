@@ -1,17 +1,14 @@
-import { useState } from "react";
+// 1/ useState import
+import{useState} from 'react'
 
-const nowTime = () => {
-    setMyTime(myTime + new Date().toLocaleDateString);
-    console.log(myTime);
-};
-
-const MyClockTime = () => {
-    let t = useState(new Date().toLocaleTimeString);
-    const [myTime, setMyTime] = useState(t);
-
-    let cnt = 0;
-    // setTimeout(console.log(++cnt), 1000);
-
+const MyClockTime1 = () => {
+        // 2. state 변수 선언
+        const [myTime, setMyTime] = useState(new Date().toLocaleTimeString());
+        
+        // 3. 초당 변경되도록 state 변수 변경
+        setInterval(() => {
+            setMyTime(new Date().toLocaleTimeString());
+        }, 1000);
 
     return (
         <footer>
@@ -20,4 +17,4 @@ const MyClockTime = () => {
     );
 }
 
-export default MyClockTime;
+export default MyClockTime1;

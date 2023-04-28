@@ -1,0 +1,18 @@
+.tbody{
+    text-align: center;
+}
+
+
+.tfoot{
+    background-color: rgb(0, 153, 255);
+    
+}
+
+.tfoot > tr > td{
+    color : white;
+    font-size: 17pt;
+    font: bold;
+    text-align: center;
+    font-family: 'Single Day', cursive;    
+
+}
