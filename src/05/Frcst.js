@@ -1,52 +1,65 @@
-import data from './dataFrcst.json';
-import './Frcst.css';
+import data from './dataFrcst.json' ;
 import { useState } from 'react';
-
-const sortDt = ['frcstOneDt', 'frcstTwoDt', 'frcstThreeDt', 'frcstFourDt'];
-
-const sortCn = ['frcstOneCn', 'frcstTwoCn', 'frcstThreeCn', 'frcstFourCn'];
-
-let dtcn = {};
-sortDt.map((item, idx) => (dtcn[data[item]] = data[sortCn[idx]]));
-console.log(dtcn);
+import './Frcst.css';
 
 const Frcst = () => {
-  const [bodyTag, setBodyTag] = useState('');
-  const [selDt, setSelDt] = useState('');
+    console.log(data)
+    /* 공공데이터포털 : 한국환경공단_에어코리아_대기오염정보
+    frcstOneCn : 첫째날예보
+    frcstTwoCn : 둘째날예보
+    frcstThreeCn : 셋째날예보
+    frcstFourCn : 넷째날예보
+    frcstOneDt : 첫째날예보일시
+    frcstTwoDt : 둘째날예보일시
+    frcstThreeDt : 셋째날예보일시
+    frcstFourDt : 넷째날예보일시
+    */
+    const [selData, setSelData] = useState('');
+    const [selDt, setSelDt] = useState('');
 
-  const detail = (k) => {
-    let dtcnItem = dtcn[k].split(',');
-    setSelDt(k);
-    dtcnItem = dtcnItem.map((item) => item.split(':'));
-    const detailTag = dtcnItem.map((item) => (
-        <div key={item[0]}>
-        <span className = 'sp1'>{item[0]}</span>
-        <span >{item[1]}</span>
-      </div>
-    ));
-    setBodyTag(detailTag);
-  };    
+    const frcstDtKey = ['frcstOneDt', 'frcstTwoDt', 'frcstThreeDt','frcstFourDt'] ;
+    const frcstCnKey = ['frcstOneCn', 'frcstTwoCn', 'frcstThreeCn', 'frcstFourCn'] ;
+    let frcst = {} ;
+    for (let [idx, dtk] of frcstDtKey.entries()) {
+        console.log(idx, dtk)
+        frcst[data[dtk]] = data[frcstCnKey[idx]] ;
+    }
+   
+    console.log(frcst)
 
-  let dtTag = [];
-  dtTag = Object.keys(dtcn).map((item, idx) => (
-    <div className key={'dt' + idx} onClick={() => detail(item)}>
-      {item}
-    </div>
-  ));
+    const show = (item) => {
+        setSelDt(item) ;
+        let showTag = frcst[item].split(',') ;
+        showTag = showTag.map((d) => d.split(':'))
+        console.log(showTag)
+        showTag = showTag.map((d) => <div key={d[0]}>
+                                        <span className='sp1'>{d[0]}</span>
+                                        <span className= {d[1].trim() === '낮음' ? 'sp11' : d[1].trim() === '보통' ? 'sp12' : 'sp13'}>{d[1]}</span>
+                                    </div>)
+        setSelData(showTag) ;
+    }
 
+    //오브젝트 키값 가져오기
+    let frcstDts = Object.keys(frcst).map((item) => <div className={selDt === item ? 'divmSel' : 'divm' }
+                                                    key={item} 
+                                                    onClick={() => show(item)}>{item}
+                                                    </div>) ;
 
-  return (
-    <main className="container">
-      <article data-theme="dark">
-        <header>
-          <h1>초미세먼지 주간예보</h1>
-          <div className="grid">{dtTag}</div>
-        </header>
-        <div className="grid">{bodyTag}</div>
-      </article>
-    </main>
-  );
-};
+    return (
+        <main className='container'>
+            <article>
+                <header><h1>초미세먼지 주간예보</h1></header>
+                <div className='grid'>
+                     {frcstDts}
+                </div>
+                <footer>
+                    <div  className='grid'>
+                    {selData}
+                    </div>
+                </footer>
+            </article>
+        </main>
+    );
+}
 
-export default Frcst;
-
+export default Frcst ;
