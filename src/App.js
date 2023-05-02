@@ -3,7 +3,8 @@ import './App.css';
 // import MyClock from './02/MyClock';
 // import Box from './03/Box';
 // import MyDiv from './04/MyDiv';
-import Frcst from './05/Frcst';
+// import Frcst from './05/Frcst';
+import Taccident from './06/Taccident';
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
     {/* <MyClock /> */}
     {/* <Box /> */}
     {/* <MyDiv /> */}
-    <Frcst />
+    {/* <Frcst /> */}
+    <Taccident />
     </>
   );
 }
