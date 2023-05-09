@@ -2,7 +2,7 @@ import TaccidentData from './dataTaccident.json';
 import TaccidentNav1 from './TaccidentNav1';
 import TaccidentNav2 from './TaccidentNav2';
 import { useState, useEffect } from 'react';
-// import TaccidentNav3 from './TaccidentNav3';
+import TaccidentNav3 from './TaccidentNav3';
 const data = TaccidentData.data;
 let c1 = data.map((item) => (item.사고유형_대분류));
 let c2 = data.map((item) => ([item.사고유형_대분류, item.사고유형_중분류]));
@@ -30,39 +30,38 @@ const Taccident = () => {
     const [sel1, setSel1] = useState(0);
     //중분류 선택
     const [sel2, setSel2] = useState([]);
-    const [selData, setSelData] = useState({});
-    
+    const [selData, setSelData] = useState(null);
+
     // useEffect(() => {
     //     console.log('Taccident sel1 useeffect []', sel1);
     // }, []);
 
     useEffect(() => {
         console.log('Taccident sel1 useeffect', sel1);
-    },[sel1]);
+    }, [sel1]);
 
     useEffect(() => {
         console.log('Taccident sel1 useeffect', sel2);
-        let temp = data.filter((item) => 
+        let temp = data.filter((item) =>
             item.사고유형_대분류 === sel2[0]
-                && item.사고유형_중분류 === sel2[1]);
-                setSelData(temp[0]);
-        
-    },[sel2]);
+            && item.사고유형_중분류 === sel2[1]);
+        setSelData(temp[0] || null);
+
+    }, [sel2]);
 
     useEffect(() => {
         console.log('Taccident selData useeffect', selData);
     }, [selData]);
-    
+
 
     return (
         <main className='container'>
             <article>
                 <header>
                     <TaccidentNav1 c1={c1} sel1={sel1} setSel1={setSel1} />
-                    <TaccidentNav2 c2={c2} sel1={sel1} sel2={sel2} setSel2={setSel2} />
-                    {/* <TaccidentNav3 c2={c2} sel1={sel1} sel2={sel2} setSel2={setSel2} selData={selData} setSelData={setSelData} /> */}
-                    
-                </header>
+                    <TaccidentNav2 c2={c2} sel1={sel1} sel2={sel2} setSel2={setSel2} />                    
+                    <TaccidentNav3 selData={selData} />
+                </header>                
             </article>
         </main>
 

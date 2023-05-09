@@ -4,7 +4,9 @@ import './App.css';
 // import Box from './03/Box';
 // import MyDiv from './04/MyDiv';
 // import Frcst from './05/Frcst';
-import Taccident from './06/Taccident';
+// import Taccident from './06/Taccident';
+// import MyRef from './07/MyRef';
+import Homework from './08/Homework';
 
 function App() {
   return (
@@ -14,7 +16,9 @@ function App() {
     {/* <Box /> */}
     {/* <MyDiv /> */}
     {/* <Frcst /> */}
-    <Taccident />
+    {/* <Taccident /> */}
+    {/* <MyRef /> */}
+    <Homework />
     </>
   );
 }

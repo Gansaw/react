@@ -1,3 +1,5 @@
+import style from './Taccident.module.css';
+
 const TaccidentNav2 = ({ c2, sel1, sel2, setSel2 }) => {
 
     const c2Filter = c2.filter((item) => (item[0] === sel1))
@@ -10,12 +12,11 @@ const TaccidentNav2 = ({ c2, sel1, sel2, setSel2 }) => {
     return (
 
         <nav>
-            <ul>
-                <h3>사고유형 중분류</h3>
-            </ul>
-            <ul>
-                {btTag2}
 
+            <ul className={style.tag2}>
+
+                <li className={style.li2}>사고유형 중분류</li>
+                {btTag2}
             </ul>
         </nav>
 

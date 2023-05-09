@@ -1,3 +1,5 @@
+import style from './Taccident.module.css';
+
 const TaccidentNav1 = ({c1, sel1, setSel1}) => {
 
     // const show = (item) => {console.log(item)}
@@ -9,7 +11,7 @@ const TaccidentNav1 = ({c1, sel1, setSel1}) => {
 
         <nav>
             <ul>
-                <h1>사고유형 대분류</h1>
+                <li className={style.li1}>사고유형 대분류</li>
             </ul>
             <ul>
                 {btTag}
