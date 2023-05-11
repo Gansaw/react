@@ -7,3 +7,9 @@
 .btDiv > button {
     margin-left: 5px;
 }
+
+.row{
+    display: flex;
+    flex-direction: row;  
+        
+}
