@@ -1,6 +1,6 @@
 {
   "name": "myreact",
-  "homepage": "https://my-project.firebaseapp.com",
+  "homepage": "https://gansaw.github.io/react",
   "version": "0.1.0",
   "private": true,
   
@@ -15,7 +15,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && mv build/index.html build/404.html",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "npm run build && gh-pages -d build",
