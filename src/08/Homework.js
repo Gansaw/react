@@ -64,8 +64,8 @@ const Homework = () => {
                         </div>
                     </div>
                 </article>
-            </form>
-            {data && <GalleryView gv={data} />}
+            </form>            
+                {data && <GalleryView gv={data} />}
         </main>
     );
 };

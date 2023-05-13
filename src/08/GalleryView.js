@@ -4,32 +4,47 @@ import style from './Homework.module.css';
 const GalleryView = ({ gv }) => {
 
   const gvTags = [];
-  for (let i = 0; i < gv.length; i += 2) {
+  let len = gv.length;
+
+  if (len === 0) {
+    return <div><h2>검색결과가 없습니다.</h2></div>
+  }
+
+  for (let i = 0; i < len; i += 2) {
     gvTags.push(
-      <div className={style.row} key={`row-${i / 2}`}>
-        <div className={style.col}>
+      <div className={style.gvRow} key={`row-${i / 2}`}>
+        <article className={style.gvCol}>
           <div className={style.gvResult} key={gv[i].galContentId}>
-            <div>
-              <div>{gv[i].galTitle}</div>
-              <div>{gv[i].galPhotographyLocation}</div>
+            <div className={style.gvHeader}>
+              <div className={style.gvTitle}>{gv[i].galTitle}</div>
+              <div className={style.gvLocation}>{gv[i].galPhotographyLocation}</div>
             </div>
-            <div><img src={gv[i].galWebImageUrl} alt='imgURL'></img></div>
-            <div>{gv[i].galSearchKeyword}</div>
+            <div className={style.gvBody}><img src={gv[i].galWebImageUrl} alt='imgURL'></img></div>
+            <div className={style.gvFooter}>
+              {gv[i].galSearchKeyword.split(',').map((keyword, index) => (
+                <span key={index}>{keyword}</span>
+              ))}
+            </div>
           </div>
-        </div>
+        </article>
         {gv[i + 1] && (
-          <div className={style.col}>
+          <article className={style.gvCol}>
             <div className={style.gvResult} key={gv[i + 1].galContentId}>
-              <div>
-                <div>{gv[i + 1].galTitle}</div>
-                <div>{gv[i + 1].galPhotographyLocation}</div>
+              <div className={style.gvHeader}>
+                <div className={style.gvTitle}>{gv[i + 1].galTitle}</div>
+                <div className={style.gvLocation}>{gv[i + 1].galPhotographyLocation}</div>
               </div>
-              <div><img src={gv[i + 1].galWebImageUrl} alt='imgURL'></img></div>
-              <div>{gv[i + 1].galSearchKeyword}</div>
+              <div className={style.gvBody}><img src={gv[i + 1].galWebImageUrl} alt='imgURL'></img></div>
+              <div className={style.gvFooter}>
+                {gv[i].galSearchKeyword.split(',').map((keyword, index) => (
+                  <span key={index}>{keyword}</span>
+                ))}
+              </div>
             </div>
-          </div>
+          </article>
         )}
       </div>
+
     );
   }
 
