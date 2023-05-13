@@ -1,0 +1,62 @@
+.btDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btDiv > button {
+    margin-left: 5px;
+}
+
+
+.gvRow{    
+    display: flex;
+    flex-direction: row;   
+
+}
+
+.gvCol{
+    width: 1000px;
+    margin: 10px;
+    margin-bottom: 40px;
+    
+}
+
+.gvHeader{
+    display: flex;
+    align-items:baseline;   
+
+}
+
+.gvTitle{
+    font-size: 20pt;
+    color: darkblue;
+    margin-bottom: 20px;
+    font-weight: bold;
+    margin-top: -10px;
+ 
+}
+
+.gvLocation{
+    font-size: 12pt;
+    margin-left: 10px;
+    color: gray;
+    font-weight: bold;
+}
+
+.gvBody{
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+.gvFooter > span{
+    display: inline-block;    
+    background-color: darkblue;
+    color: white;
+    margin-right: 10px;    
+    margin-bottom: 10px;
+    border-radius: 3pt;    
+    white-space: pre-wrap;
+    word-break:keep-all;
+    
+}
