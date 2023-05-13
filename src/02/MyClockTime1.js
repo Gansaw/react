@@ -1,5 +1,5 @@
 // 1/ useState import
-import{useState} from 'react'
+import {useState} from 'react';
 
 const MyClockTime1 = () => {
         // 2. state 변수 선언

@@ -1,5 +1,5 @@
 // import BoxRows from './BoxRows';
-import BoxRows from './BoxRows1';
+import BoxRows1 from './BoxRows1';
 import './Box.css'
 const Box = () => {
     let mvlist =
