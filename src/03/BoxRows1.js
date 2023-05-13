@@ -22,12 +22,12 @@ const BoxRows = ({ mv }) => {
     for (let row of mv) {
         let icon;
         let inten = parseInt(row.rankInten);
-        if (inten === 0) icon = "⏹";
+        if (inten === 0) icon = "";
         else if (inten > 0) icon = "🔼";
         else icon = "🔽";
 
         trTags.push(
-            <tr className="mytr" key={row.movieCd} onClick={() => showMv(row)}>
+            <tr className={style.mytr} key={row.movieCd} onClick={() => showMv(row)}>
                 <td>{row.rank}</td>
                 <td>{row.movieNm}</td>
                 <td>{parseInt(row.salesAmt).toLocaleString()}</td>
