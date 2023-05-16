@@ -30,7 +30,7 @@ const Homework = () => {
 
     // Gallery에 있는 data를 const(useState)
     // 입력하는 값을 keyword로 지정하고 const(useState)
-    const [data, setData] = useState(null);
+    const [data, setData] = useState();
     const [keyword, setKeyword] = useState('');
 
     useEffect(() => {

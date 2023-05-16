@@ -1,13 +1,8 @@
-<<<<<<< HEAD
 // import BoxRows from './BoxRows';
 import BoxRows1 from './BoxRows1';
-import './Box.css'
-=======
-import BoxRows from './BoxRows1';
 import { useState, useEffect, useRef } from 'react';
 import './Box.css';
 
->>>>>>> 063af8874ee59322d79489897e9661325a28a636
 const Box = () => {
 
     const [mvlist, setMvlist] = useState();
@@ -77,7 +72,7 @@ const Box = () => {
                                 <th scope="col">증감</th>
                             </tr>
                         </thead>
-                        {mvlist && <BoxRows mv={mvlist} />}
+                        {mvlist && <BoxRows1 mv={mvlist} />}
                     </table>
                 </article>
             </main>

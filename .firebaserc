@@ -1,8 +1,5 @@
 {
   "projects": {
-    "default": "chj-kto-gallery",
-    "homework": "chj-kto-gallery"
-  },
-  "targets": {},
-  "etags": {}
+    "default": "movie-420c6"
+  }
 }

@@ -6,7 +6,8 @@ import './App.css';
 // import Frcst from './05/Frcst';
 // import Taccident from './06/Taccident';
 // import MyRef from './07/MyRef';
-import Homework from './08/Homework';
+// import Homework from './08/Homework';
+import Gallery from './08-1/Gallery';
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
     {/* <Frcst /> */}
     {/* <Taccident /> */}
     {/* <MyRef /> */}
-    <Homework />
+    {/* <Homework /> */}
+    <Gallery />
     </>
   );
 }
