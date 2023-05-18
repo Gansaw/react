@@ -7,7 +7,9 @@ import './App.css';
 // import Taccident from './06/Taccident';
 // import MyRef from './07/MyRef';
 // import Homework from './08/Homework';
-import Gallery from './08-1/Gallery';
+// import Gallery from './08-1/Gallery';
+// import RouteMain from './09/RouteMain';
+import Fcst from './09-1/Fcst';
 
 function App() {
   return (
@@ -20,7 +22,9 @@ function App() {
     {/* <Taccident /> */}
     {/* <MyRef /> */}
     {/* <Homework /> */}
-    <Gallery />
+    {/* <Gallery /> */}
+    {/* <RouteMain /> */}
+    <Fcst />
     </>
   );
 }

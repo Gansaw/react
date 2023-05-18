@@ -2,11 +2,10 @@ import React from 'react';
 import styles from './Gallery.module.css';
 
 
-const GalleryArticle = ({ item, onClickTags }) => {
-  let tags = item.galSearchKeyword.split(',');
-  tags = tags.map((i) => (
-    <span className={styles.tags} onClick={onClickTags}>
-      {i}
+const GalleryArticle = ({ item, index }) => {
+  let tags = item.galSearchKeyword.split(',').map((tag, index) => (
+    <span key={index} className={styles.tags}>
+      {tag}
     </span>
   ));
 

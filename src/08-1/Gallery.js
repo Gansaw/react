@@ -40,11 +40,7 @@ const Gallery = () => {
         e.preventDefault();
     };
 
-    const onClickTags = (tags) => {
-        return () => {
-          setKeyword(tags);
-        };
-      };
+
       
     return (
         <main className="container">
@@ -68,7 +64,7 @@ const Gallery = () => {
             {items && (
                 <GalleryView content={items}>
                     {items.map((item) => (
-                        <GalleryArticle key={item.galTitle} item={item} onClickTags={() => onClickTags(item.galSearchKeyword)} />
+                        <GalleryArticle key={item.galTitle} item={item} />
                     ))}
 
 
@@ -79,4 +75,3 @@ const Gallery = () => {
 };
 
 export default Gallery;
-
