@@ -1,8 +1,6 @@
-import { Link } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
-import UltraSrtFcst from './UltraSrtFcst';
+import { Link } from 'react-router-dom';
 import getxy from './getxy.json';
-import TableFcst from './TableFcst';
 
 const FcstMain = () => {
   const ops = getxy.map((item) =>
@@ -62,8 +60,6 @@ const FcstMain = () => {
           <Link to={`/vilage/${dt}/${area}/${x}/${y}`} role='button'>단기예보</Link>
         </div>
       </footer>
-      {dt && x && y && <UltraSrtFcst dt = {dt} nx={x} ny={y} />}
-      {dt && <TableFcst dt = {dt} />}
     </article>
   );
 };

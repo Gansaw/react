@@ -9,7 +9,8 @@ import './App.css';
 // import Homework from './08/Homework';
 // import Gallery from './08-1/Gallery';
 // import RouteMain from './09/RouteMain';
-import Fcst from './09-1/Fcst';
+import Fcst from './10/Fcst';
+// import Fcst from './11/Fcst';
 
 function App() {
   return (
