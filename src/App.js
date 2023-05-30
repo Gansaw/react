@@ -9,9 +9,11 @@ import './App.css';
 // import Homework from './08/Homework';
 // import Gallery from './08-1/Gallery';
 // import RouteMain from './09/RouteMain';
-// import Fcst from './10/Fcst';
+import Fcst from './10/Fcst';
 // import Fcst from './10-1/Fcst';
-import Codeview from './11/Codeview';
+// import Codeview from './11/Codeview';
+// import Codeview from './11-1/Codeview';
+// import Cnt from './12-1/Cnt';
 
 function App() {
   return (
@@ -26,8 +28,9 @@ function App() {
     {/* <Homework /> */}
     {/* <Gallery /> */}
     {/* <RouteMain /> */}
-    {/* <Fcst /> */}
-    <Codeview />
+    <Fcst />
+    {/* <Codeview /> */}
+    {/* <Cnt />     */}
     </>
   );
 }

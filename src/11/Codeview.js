@@ -4,7 +4,7 @@ const Codeview = () => {
 
     return (
         <>
-            <h1>Code</h1>
+            <h2>Code</h2>
             <Codegubun />
         </>
     );

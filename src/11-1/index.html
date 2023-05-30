@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날씨예보</title>
+    <script>
+        function show() {
+            var kn = form1.txt1.value ;
+            if (kn == "" )  {
+                alert("값을 입력하세요.");
+                form1.txt1.focus() ;
+                return;
+            }
+            console.log(kn) ;
+            alert(kn + "안녕하세요.") ;
+        }
+
+    </script>
+</head>
+<body>
+    <h1>단기예보</h1>
+    <ul>
+        <li>강수확률(POP) "%"</li>
+        <li>강수형태(PTY) "코드값"</li>
+        <li>1시간 강수량(PCP) "범주 (1 mm)"</li> 
+    </ul>
+
+    <h1>초단기예보</h1>
+    <ul>
+        <li>1시간 강수량(RN1) "범주 (1 mm)"</li>
+        <li>하늘상태(SKY) "코드값"</li>
+        <li>동서바람성분(UUU) "m\/s"</li> 
+    </ul>
+
+    <form method="get" action="a.html" name="form1">
+        선택 : <input type="text" name="txt1">
+        <input type="button" value="확인" onclick="show()">
+    </form>
+</body>
+</html>

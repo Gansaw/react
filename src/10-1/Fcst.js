@@ -1,18 +1,15 @@
-import Vilage from './Vilage';
-import Ultra from './Ultra';
+import VilageFcst from './VilageFcst' ;
+import UltraFcst from "./UltraFcst";
 
 const Fcst = () => {
-    
-    return (
-        <main>
-            <article>
-                <Ultra />
-            </article>
-            <article>
-                <Vilage />
-            </article>
+  
 
-        </main>
+    return (
+        <>
+            <UltraFcst />
+            <VilageFcst /> 
+        </>
     );
 }
+
 export default Fcst;

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import getcode from "./getcode.json";
 
 // const Codelist = (probs) => {
